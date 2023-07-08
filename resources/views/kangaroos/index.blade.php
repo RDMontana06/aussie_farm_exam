@@ -24,29 +24,43 @@
     @include('kangaroos._edit_modal')
     <script>
         // Initialize the DxDataGrid
-  $(function() {
-    $("#gridContainer").dxDataGrid({
-      dataSource: {!! json_encode($kangaroos) !!},
-      columns: [
-        { dataField: 'name', caption: 'Name' },
-        { dataField: 'birthday', caption: 'Birthday' },
-        { dataField: 'weight', caption: 'Weight' },
-        { dataField: 'height', caption: 'Height' },
-        { dataField: 'friendliness', caption: 'Friendliness', defaultValue: '-' },
-        {
-          type: 'buttons',
-          buttons: [{
-            text: 'Edit',
-            onClick: function(e) {
-                var kangarooId = e.row.data.id;
-                openEditModal(kangarooId);
-            }
-          }]
-        }
-      ],
-      showBorders: true,
-    });
+        $(function() {
+  $("#gridContainer").dxDataGrid({
+    dataSource: {!! json_encode($kangaroos) !!},
+    columns: [
+      { dataField: 'name', caption: 'Name' },
+      { dataField: 'birthday', caption: 'Birthday', dataType: 'date' },
+      { dataField: 'weight', caption: 'Weight', dataType: 'number' },
+      { dataField: 'height', caption: 'Height', dataType: 'number' },
+      { dataField: 'friendliness', caption: 'Friendliness', defaultValue: '-' },
+      {
+        type: 'buttons',
+        buttons: [{
+          text: 'Edit',
+          onClick: function(e) {
+            var kangarooId = e.row.data.id;
+            openEditModal(kangarooId);
+          }
+        }]
+      }
+    ],
+    showBorders: true,
+    searchPanel: {
+      visible: true,
+      highlightCaseSensitive: false
+    },
+    sorting: {
+      mode: 'multiple'
+    },
+    filterRow: {
+      visible: true
+    },
+    headerFilter: {
+      visible: true
+    }
   });
+});
+
   function openEditModal(kangarooId) {
   $.ajax({
     url: '/kangaroos/' + kangarooId + '/edit',
@@ -66,6 +80,9 @@
       $('#edit-color').val(kangaroo.color);
       $('#edit-friendliness').val(kangaroo.friendliness);
       $('#edit-birthday').val(kangaroo.birthday);
+
+      // Store the kangaroo ID in a hidden input field within the form
+      $('#edit-kangaroo-id').val(kangarooId);
     },
     error: function(error) {
       // Handle the error case

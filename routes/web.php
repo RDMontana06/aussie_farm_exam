@@ -17,4 +17,4 @@ Route::get('/kangaroos', 'KangarooController@index')->name('kangaroos.index');
 Route::get('/kangaroos/create', 'KangarooController@create')->name('kangaroos.create');
 Route::post('/kangaroos', 'KangarooController@store')->name('kangaroos.store');
 Route::get('/kangaroos/{kangaroo}/edit', 'KangarooController@edit')->name('kangaroos.edit');
-Route::patch('/kangaroos/{kangaroo}', 'KangarooController@update')->name('kangaroos.update');
+Route::patch('/kangaroos/{id}', 'KangarooController@update');

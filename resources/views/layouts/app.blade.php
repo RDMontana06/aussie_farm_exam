@@ -11,6 +11,7 @@
     <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
 
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Aussie Farm</title>
     <style>
         .content-wrapper{
