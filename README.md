@@ -1,7 +1,3 @@
-Database backup is located at the folder name <b>db_backup</b> <br>
-If you want to run the migration file you need first to create a database named <b>kangaroos</b><br>
-and run php artisan migrate to migrate the database
-
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
