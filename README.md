@@ -1,3 +1,45 @@
+# Aussie Farm
+
+Aussie Farm is a project built with Laravel 7 and PHP 8.2.
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/RDMontana06/aussie_farm_exam.git
+    ```
+
+2. Change to the project directory:
+   cd aussie_farm_exam
+3. Install the project dependencies using Composer:
+   composer install
+4. Create a copy of the .env.example file and name it .env:
+   cp .env.example .env
+5. Generate a new application key:
+   php artisan key:generate
+6. Start the local development server:
+   php artisan serve
+7. Open your web browser and visit http://localhost:8000 to access the application.
+
+Database Configuration
+The application requires a MySQL database. Follow these steps to set up the database:
+
+1. Make sure you have MySQL installed and running on your system.
+
+2. Create a new database with the name aussiefarm_db.
+
+3. Open the .env file and update the following configurations:
+
+    - Set the DB_CONNECTION to mysql.
+    - Set the DB_HOST to the appropriate MySQL host (e.g., 127.0.0.1).
+    - Set the DB_PORT to the appropriate MySQL port (default is usually 3306).
+    - Set the DB_DATABASE to aussiefarm_db.
+    - Set the DB_USERNAME and DB_PASSWORD according to your MySQL credentials.
+
+4. Run the database migrations and seed the database:
+   php artisan migrate --seed
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
