@@ -32,7 +32,7 @@ Aussie Farm is a project built with Laravel 7 and PHP 8.2.
     ```
 7. Open your web browser and visit http://localhost:8000 to access the application.
 
-Database Configuration
+Database Configuration <br>
 The application requires a MySQL database. Follow these steps to set up the database:
 
 1. Make sure you have MySQL installed and running on your system.
